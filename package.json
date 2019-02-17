@@ -1,0 +1,20 @@
+{
+  "name": "yt_audio_stream",
+  "version": "1.0.0",
+  "description": "a backend for streaming audio from yt",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Evan Gokey (daftpotato) evanwgokeyXd@gmail.com",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.17",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "install": "^0.12.2",
+    "npm": "^6.8.0",
+    "path": "^0.12.7",
+    "url": "^0.11.0",
+    "youtube-audio-stream": "^0.3.0"
+  }
+}
