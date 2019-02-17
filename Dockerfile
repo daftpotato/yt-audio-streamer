@@ -10,6 +10,5 @@ RUN apt-get install -y software-properties-common
 RUN apt-get update
 RUN apt-get install -y ffmpeg nodejs npm
 RUN npm install
-RUN node index.js
 
 EXPOSE 8080
