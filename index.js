@@ -1,21 +1,16 @@
-var path = require('path');
-var http = require("http");
-var url  = require('url') ;
+const http = require('http');
+const url = require('url');
 const fs = require('fs');
 var ws = fs.createWriteStream(__dirname+'/Buffer.mp3');
 var buffer = fs.createReadStream(__dirname+'/Buffer.mp3')
 var youtubeStream = require('youtube-audio-stream')
-var server = http.createServer(function(request, response) {
-    response.writeHead(200, {"Content-Type": "audio/mpeg"});
-    let paramsUrl = url.parse(request.url, true).query;
-    console.log("URL Video: " + paramsUrl.link);
-var  yt = youtubeStream(paramsUrl.link) 
+http.createServer(function (req, res) {
+	res.writeHead(200, {"Content-Type": "audio/mpeg"});
+  const queryObject = url.parse(req.url,true).query;
+	console.log("URL Video: " + queryObject.url);
+ 
+  var  yt = youtubeStream(queryObject.url) 
 
-yt.pipe(response) 
+	yt.pipe(res)  
 
-
-
-});
-
-
-server.listen(8080);
+}).listen(8090);
